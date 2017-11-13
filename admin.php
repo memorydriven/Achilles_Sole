@@ -47,6 +47,7 @@
 				<th>Weight</th>
 				<?
 					if($_SESSION['logged_in_user_access'] == 0) {
+						print "\t\t<th>Edit</th>\n";
 						print "\t\t<th>Delete</th>\n";
 					}	
 				?>
@@ -65,9 +66,10 @@
 					print "\t\t<td>".$row['Stock']."</td>\n";
 					print "\t\t<td>".$row['Cost']."</td>\n";
 					print "\t\t<td>".$row['Price']."</td>\n";
-					//print "\t\t<td><img src=\"".$row['Image']."\" alt=\"Game Picture\" height=\"225\" width=\"150\"></td>\n";
+					print "\t\t<td>".$row['Image']."</td>\n";
 					print "\t\t<td>".$row['Weight']."</td>\n";
-					print "\t\t<td><a href=\"delete.php?SKU=".$row['SKU']."\">delete</a></td>\n";
+					print "\t\t<td><a href=\"edit.php?SKU=".$row['SKU']."\">Edit</a></td>\n";
+					print "\t\t<td><a href=\"delete.php?SKU=".$row['SKU']."\">Delete</a></td>\n";
 					print "\t</tr>\n";
 
 				}
